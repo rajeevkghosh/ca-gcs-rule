@@ -1,0 +1,394 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data":    {},
+		"modules": {},
+		"outputs": {},
+		"providers": {
+			"google": {
+				"alias": {
+					"": {
+						"config":     {},
+						"references": {},
+						"version":    "",
+					},
+				},
+				"config":     {},
+				"references": {},
+				"version":    "",
+			},
+			"tls": {
+				"alias": {
+					"": {
+						"config":     {},
+						"references": {},
+						"version":    "",
+					},
+				},
+				"config":     {},
+				"references": {},
+				"version":    "",
+			},
+		},
+		"resources": {
+			"google_privateca_ca_pool": {
+				"default": {
+					"config": {
+						"issuance_policy": [
+							{
+								"baseline_values": [
+									{
+										"ca_options": [
+											{
+												"is_ca": false,
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"digital_signature": true,
+														"key_encipherment":  true,
+													},
+												],
+												"extended_key_usage": [
+													{
+														"server_auth": true,
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"labels": {
+							"foo": "bar",
+						},
+						"location": "us-central1",
+						"name":     "my-ca-pool-05",
+						"project":  "modular-scout-345114",
+						"publishing_options": [
+							{
+								"publish_ca_cert": true,
+								"publish_crl":     true,
+							},
+						],
+						"tier": "ENTERPRISE",
+					},
+					"provisioners": null,
+					"references": {
+						"issuance_policy": [
+							{
+								"baseline_values": [
+									{
+										"ca_options": [
+											{
+												"is_ca": [],
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"digital_signature": [],
+														"key_encipherment":  [],
+													},
+												],
+												"extended_key_usage": [
+													{
+														"server_auth": [],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"labels":   [],
+						"location": [],
+						"name":     [],
+						"project":  [],
+						"publishing_options": [
+							{
+								"publish_ca_cert": [],
+								"publish_crl":     [],
+							},
+						],
+						"tier": [],
+					},
+				},
+			},
+			"google_privateca_certificate": {
+				"default": {
+					"config": {
+						"lifetime": "860s",
+						"location": "us-central1",
+						"name":     "my-certificate",
+						"project":  "modular-scout-345114",
+					},
+					"provisioners": null,
+					"references": {
+						"certificate_authority": [
+							"google_privateca_certificate_authority.test-ca5.certificate_authority_id",
+							"google_privateca_certificate_authority.test-ca5",
+						],
+						"lifetime": [],
+						"location": [],
+						"name":     [],
+						"pem_csr": [
+							"tls_cert_request.example.cert_request_pem",
+							"tls_cert_request.example",
+						],
+						"pool": [
+							"google_privateca_ca_pool.default.name",
+							"google_privateca_ca_pool.default",
+						],
+						"project": [],
+					},
+				},
+			},
+			"google_privateca_certificate_authority": {
+				"test-ca5": {
+					"config": {
+						"certificate_authority_id": "my-authority5",
+						"config": [
+							{
+								"subject_config": [
+									{
+										"subject": [
+											{
+												"common_name":         "my-certificate-authority",
+												"country_code":        "us",
+												"locality":            "mountain view",
+												"organization":        "google",
+												"organizational_unit": "enterprise",
+												"postal_code":         "94109",
+												"province":            "california",
+												"street_address":      "1600 amphitheatre parkway",
+											},
+										],
+									},
+								],
+								"x509_config": [
+									{
+										"ca_options": [
+											{
+												"is_ca": true,
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"cert_sign": true,
+														"crl_sign":  true,
+													},
+												],
+												"extended_key_usage": [
+													{
+														"server_auth": true,
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"deletion_protection": false,
+						"key_spec": [
+							{
+								"algorithm": "RSA_PSS_2048_SHA256",
+							},
+						],
+						"location": "us-central1",
+						"project":  "modular-scout-345114",
+						"type":     "SELF_SIGNED",
+					},
+					"provisioners": null,
+					"references": {
+						"certificate_authority_id": [],
+						"config": [
+							{
+								"subject_config": [
+									{
+										"subject": [
+											{
+												"common_name":         [],
+												"country_code":        [],
+												"locality":            [],
+												"organization":        [],
+												"organizational_unit": [],
+												"postal_code":         [],
+												"province":            [],
+												"street_address":      [],
+											},
+										],
+									},
+								],
+								"x509_config": [
+									{
+										"ca_options": [
+											{
+												"is_ca": [],
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"cert_sign": [],
+														"crl_sign":  [],
+													},
+												],
+												"extended_key_usage": [
+													{
+														"server_auth": [],
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"deletion_protection": [],
+						"gcs_bucket": [
+							"google_storage_bucket.default.url",
+							"google_storage_bucket.default",
+						],
+						"key_spec": [
+							{
+								"algorithm": [],
+							},
+						],
+						"location": [],
+						"pool": [
+							"google_privateca_ca_pool.default.name",
+							"google_privateca_ca_pool.default",
+						],
+						"project": [],
+						"type":    [],
+					},
+				},
+			},
+			"google_storage_bucket": {
+				"default": {
+					"config": {
+						"force_destroy": true,
+						"lifecycle_rule": [
+							{
+								"action": [
+									{
+										"type": "Delete",
+									},
+								],
+								"condition": [
+									{
+										"age": 3,
+									},
+								],
+							},
+						],
+						"location": "US",
+						"name":     "bucket-ca-007",
+						"project":  "modular-scout-345114",
+					},
+					"provisioners": null,
+					"references": {
+						"force_destroy": [],
+						"lifecycle_rule": [
+							{
+								"action": [
+									{
+										"type": [],
+									},
+								],
+								"condition": [
+									{
+										"age": [],
+									},
+								],
+							},
+						],
+						"location": [],
+						"name":     [],
+						"project":  [],
+					},
+				},
+			},
+			"tls_cert_request": {
+				"example": {
+					"config": {
+						"key_algorithm": "RSA",
+						"subject": [
+							{
+								"common_name":  "example.com",
+								"organization": "ACME Examples, Inc",
+							},
+						],
+					},
+					"provisioners": null,
+					"references": {
+						"key_algorithm": [],
+						"private_key_pem": [
+							"tls_private_key.example.private_key_pem",
+							"tls_private_key.example",
+						],
+						"subject": [
+							{
+								"common_name":  [],
+								"organization": [],
+							},
+						],
+					},
+				},
+			},
+			"tls_private_key": {
+				"example": {
+					"config": {
+						"algorithm": "RSA",
+					},
+					"provisioners": null,
+					"references": {
+						"algorithm": [],
+					},
+				},
+			},
+		},
+		"variables": {},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+modules = _modules.root.modules
+providers = _modules.root.providers
+resources = _modules.root.resources
+variables = _modules.root.variables
+outputs = _modules.root.outputs

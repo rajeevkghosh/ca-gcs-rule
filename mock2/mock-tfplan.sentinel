@@ -1,0 +1,841 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {},
+		"path": [],
+		"resources": {
+			"google_privateca_certificate": {
+				"default": {
+					0: {
+						"applied": {
+							"certificate_authority": "my-authority5",
+							"certificate_template":  null,
+							"config":                [],
+							"labels":                null,
+							"lifetime":              "860s",
+							"location":              "us-central1",
+							"name":                  "my-certificate",
+							"pem_csr":               "-----BEGIN CERTIFICATE REQUEST-----\nMIICeDCCAWACAQAwMzEbMBkGA1UEChMSQUNNRSBFeGFtcGxlcywgSW5jMRQwEgYD\nVQQDEwtleGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB\nALOWFSpX+OUz0xEZQhKwlIkG5DbYmynrpLvC/XN0ZKPHB5coi9AQdfkmkmbdsKwp\noggosyrOdDu86e6JMd8rPuphkt4GlQ5g9Qhr7YSNofB/3TdHDjAQt+oTK2sgFb2M\n4WVr5hsO61Ne8WZEO6Zh52PgLv+wQX+ah41ZP3pA4zaEXYADw5JoLNfryXUZH20d\n8YP3HebTRk5CuTZjw/IhwMrPQfJCZol/0C38u3B1OmR1bKukJbWWwnwH0Z5niaz8\n48OJGD2iyi6ADXbM9xazU6+lv3enbj/u+006RqrWAra9q5Dc75+EU7hkz9KMUypF\nD7YJ2khp7kodm/inpMIBj18CAwEAAaAAMA0GCSqGSIb3DQEBCwUAA4IBAQBXOmBH\nv525LcK4At8bWpM8wKB55rKWcz4r/H6wdKJTRbR1S9ask+imIx4zpH5dsd3zjYc+\nxnXcfRFmlab7i9V9g4UhL56jckQp8B0ICydGC2e/xngeeIBxytYBhAVcc42Vx1y/\n8ITsl8U1WnJBbncgj75z9xfnR6+w3frtO7ua68+KqNm30FODOL1BnSNcUXOWg4PR\nJ129T891hihiVWJ1vrbcX8Z8Jag2T5ehOTVuX1d2dUNfpYnC22vufNEZc87yosje\newc37KNpGs0FfpStZwpg7Xn8KXvNFYVV4X7Iuck7aYjrl4UC88ez/v6ZAMWVDgL7\nSedvSGtxEmu3yzmI\n-----END CERTIFICATE REQUEST-----\n",
+							"pool":                  "my-ca-pool-05",
+							"project":               "modular-scout-345114",
+							"timeouts":              null,
+						},
+						"destroy": false,
+						"diff": {
+							"certificate_authority": {
+								"computed": false,
+								"new":      "my-authority5",
+								"old":      "",
+							},
+							"certificate_description.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"certificate_template": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"create_time": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"issuer_certificate_authority": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifetime": {
+								"computed": false,
+								"new":      "860s",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "us-central1",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "my-certificate",
+								"old":      "",
+							},
+							"pem_certificate": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"pem_certificate_chain.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"pem_certificates.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"pem_csr": {
+								"computed": false,
+								"new":      "-----BEGIN CERTIFICATE REQUEST-----\nMIICeDCCAWACAQAwMzEbMBkGA1UEChMSQUNNRSBFeGFtcGxlcywgSW5jMRQwEgYD\nVQQDEwtleGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB\nALOWFSpX+OUz0xEZQhKwlIkG5DbYmynrpLvC/XN0ZKPHB5coi9AQdfkmkmbdsKwp\noggosyrOdDu86e6JMd8rPuphkt4GlQ5g9Qhr7YSNofB/3TdHDjAQt+oTK2sgFb2M\n4WVr5hsO61Ne8WZEO6Zh52PgLv+wQX+ah41ZP3pA4zaEXYADw5JoLNfryXUZH20d\n8YP3HebTRk5CuTZjw/IhwMrPQfJCZol/0C38u3B1OmR1bKukJbWWwnwH0Z5niaz8\n48OJGD2iyi6ADXbM9xazU6+lv3enbj/u+006RqrWAra9q5Dc75+EU7hkz9KMUypF\nD7YJ2khp7kodm/inpMIBj18CAwEAAaAAMA0GCSqGSIb3DQEBCwUAA4IBAQBXOmBH\nv525LcK4At8bWpM8wKB55rKWcz4r/H6wdKJTRbR1S9ask+imIx4zpH5dsd3zjYc+\nxnXcfRFmlab7i9V9g4UhL56jckQp8B0ICydGC2e/xngeeIBxytYBhAVcc42Vx1y/\n8ITsl8U1WnJBbncgj75z9xfnR6+w3frtO7ua68+KqNm30FODOL1BnSNcUXOWg4PR\nJ129T891hihiVWJ1vrbcX8Z8Jag2T5ehOTVuX1d2dUNfpYnC22vufNEZc87yosje\newc37KNpGs0FfpStZwpg7Xn8KXvNFYVV4X7Iuck7aYjrl4UC88ez/v6ZAMWVDgL7\nSedvSGtxEmu3yzmI\n-----END CERTIFICATE REQUEST-----\n",
+								"old":      "",
+							},
+							"pool": {
+								"computed": false,
+								"new":      "my-ca-pool-05",
+								"old":      "",
+							},
+							"project": {
+								"computed": false,
+								"new":      "modular-scout-345114",
+								"old":      "",
+							},
+							"revocation_details.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"update_time": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"google_privateca_certificate_authority": {
+				"test-ca5": {
+					0: {
+						"applied": {
+							"certificate_authority_id": "my-authority5",
+							"config": [
+								{
+									"subject_config": [
+										{
+											"subject": [
+												{
+													"common_name":         "my-certificate-authority",
+													"country_code":        "us",
+													"locality":            "mountain view",
+													"organization":        "google",
+													"organizational_unit": "enterprise",
+													"postal_code":         "94109",
+													"province":            "california",
+													"street_address":      "1600 amphitheatre parkway",
+												},
+											],
+											"subject_alt_name": [],
+										},
+									],
+									"x509_config": [
+										{
+											"additional_extensions": [],
+											"aia_ocsp_servers":      null,
+											"ca_options": [
+												{
+													"is_ca":                       true,
+													"max_issuer_path_length":      null,
+													"non_ca":                      null,
+													"zero_max_issuer_path_length": null,
+												},
+											],
+											"key_usage": [
+												{
+													"base_key_usage": [
+														{
+															"cert_sign":          true,
+															"content_commitment": null,
+															"crl_sign":           true,
+															"data_encipherment":  null,
+															"decipher_only":      null,
+															"digital_signature":  null,
+															"encipher_only":      null,
+															"key_agreement":      null,
+															"key_encipherment":   null,
+														},
+													],
+													"extended_key_usage": [
+														{
+															"client_auth":      null,
+															"code_signing":     null,
+															"email_protection": null,
+															"ocsp_signing":     null,
+															"server_auth":      true,
+															"time_stamping":    null,
+														},
+													],
+													"unknown_extended_key_usages": [],
+												},
+											],
+											"policy_ids": [],
+										},
+									],
+								},
+							],
+							"deletion_protection":                    false,
+							"desired_state":                          null,
+							"ignore_active_certificates_on_deletion": false,
+							"key_spec": [
+								{
+									"algorithm":             "RSA_PSS_2048_SHA256",
+									"cloud_kms_key_version": null,
+								},
+							],
+							"labels":   null,
+							"lifetime": "315360000s",
+							"location": "us-central1",
+							"pool":     "my-ca-pool-05",
+							"project":  "modular-scout-345114",
+							"timeouts": null,
+							"type":     "SELF_SIGNED",
+						},
+						"destroy": false,
+						"diff": {
+							"access_urls.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"certificate_authority_id": {
+								"computed": false,
+								"new":      "my-authority5",
+								"old":      "",
+							},
+							"config.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"config.0.subject_config.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.subject_config.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.%": {
+								"computed": false,
+								"new":      "8",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.common_name": {
+								"computed": false,
+								"new":      "my-certificate-authority",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.country_code": {
+								"computed": false,
+								"new":      "us",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.locality": {
+								"computed": false,
+								"new":      "mountain view",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.organization": {
+								"computed": false,
+								"new":      "google",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.organizational_unit": {
+								"computed": false,
+								"new":      "enterprise",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.postal_code": {
+								"computed": false,
+								"new":      "94109",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.province": {
+								"computed": false,
+								"new":      "california",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject.0.street_address": {
+								"computed": false,
+								"new":      "1600 amphitheatre parkway",
+								"old":      "",
+							},
+							"config.0.subject_config.0.subject_alt_name.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"config.0.x509_config.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.x509_config.0.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"config.0.x509_config.0.additional_extensions.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"config.0.x509_config.0.aia_ocsp_servers": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.ca_options.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.x509_config.0.ca_options.0.%": {
+								"computed": false,
+								"new":      "4",
+								"old":      "",
+							},
+							"config.0.x509_config.0.ca_options.0.is_ca": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"config.0.x509_config.0.ca_options.0.max_issuer_path_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.ca_options.0.non_ca": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.ca_options.0.zero_max_issuer_path_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.%": {
+								"computed": false,
+								"new":      "3",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.%": {
+								"computed": false,
+								"new":      "9",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.cert_sign": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.content_commitment": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.crl_sign": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.data_encipherment": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.decipher_only": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.digital_signature": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.encipher_only": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.key_agreement": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.base_key_usage.0.key_encipherment": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.0.%": {
+								"computed": false,
+								"new":      "6",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.0.client_auth": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.0.code_signing": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.0.email_protection": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.0.ocsp_signing": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.0.server_auth": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.extended_key_usage.0.time_stamping": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"config.0.x509_config.0.key_usage.0.unknown_extended_key_usages.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"config.0.x509_config.0.policy_ids.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"create_time": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"deletion_protection": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"desired_state": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"gcs_bucket": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ignore_active_certificates_on_deletion": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"key_spec.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"key_spec.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"key_spec.0.algorithm": {
+								"computed": false,
+								"new":      "RSA_PSS_2048_SHA256",
+								"old":      "",
+							},
+							"key_spec.0.cloud_kms_key_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifetime": {
+								"computed": false,
+								"new":      "315360000s",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "us-central1",
+								"old":      "",
+							},
+							"name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"pem_ca_certificates.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"pool": {
+								"computed": false,
+								"new":      "my-ca-pool-05",
+								"old":      "",
+							},
+							"project": {
+								"computed": false,
+								"new":      "modular-scout-345114",
+								"old":      "",
+							},
+							"state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"type": {
+								"computed": false,
+								"new":      "SELF_SIGNED",
+								"old":      "",
+							},
+							"update_time": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"google_storage_bucket": {
+				"default": {
+					0: {
+						"applied": {
+							"cors": [],
+							"default_event_based_hold": null,
+							"encryption":               [],
+							"force_destroy":            true,
+							"labels":                   null,
+							"lifecycle_rule": [
+								{
+									"action": [
+										{
+											"storage_class": "",
+											"type":          "Delete",
+										},
+									],
+									"condition": [
+										{
+											"age":                        3,
+											"created_before":             "",
+											"custom_time_before":         "",
+											"days_since_custom_time":     null,
+											"days_since_noncurrent_time": null,
+											"matches_storage_class":      [],
+											"noncurrent_time_before":     "",
+											"num_newer_versions":         null,
+										},
+									],
+								},
+							],
+							"location":         "US",
+							"logging":          [],
+							"name":             "bucket-ca-007",
+							"project":          "modular-scout-345114",
+							"requester_pays":   null,
+							"retention_policy": [],
+							"storage_class":    "STANDARD",
+							"timeouts":         null,
+							"versioning":       [],
+							"website":          [],
+						},
+						"destroy": false,
+						"diff": {
+							"cors.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"default_event_based_hold": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"encryption.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"force_destroy": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"lifecycle_rule.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"lifecycle_rule.0.action.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"lifecycle_rule.0.action.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"lifecycle_rule.0.action.0.storage_class": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.action.0.type": {
+								"computed": false,
+								"new":      "Delete",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.age": {
+								"computed": false,
+								"new":      "3",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.created_before": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.custom_time_before": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.days_since_custom_time": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.days_since_noncurrent_time": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.matches_storage_class.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.noncurrent_time_before": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.num_newer_versions": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"lifecycle_rule.0.condition.0.with_state": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "US",
+								"old":      "",
+							},
+							"logging.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "bucket-ca-007",
+								"old":      "",
+							},
+							"project": {
+								"computed": false,
+								"new":      "modular-scout-345114",
+								"old":      "",
+							},
+							"requester_pays": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"retention_policy.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"self_link": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_class": {
+								"computed": false,
+								"new":      "STANDARD",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"uniform_bucket_level_access": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"url": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"versioning.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"website.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.2.4"
+
+variables = {}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources

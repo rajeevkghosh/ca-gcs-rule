@@ -51,7 +51,7 @@ resource "google_privateca_certificate_authority" "test-ca5" {
   project = "modular-scout-345114"
   pool = google_privateca_ca_pool.default.name
   deletion_protection = false
-  gcs_bucket = "bucket-ca-007"
+  gcs_bucket = data.google_storage_bucket.default.name
   config {
     subject_config {
       subject {
@@ -97,18 +97,6 @@ resource "google_privateca_certificate" "default" {
   pem_csr = tls_cert_request.example.cert_request_pem
 }
 
-resource "google_storage_bucket" "default" {
+data "google_storage_bucket" "default" {
   name          = "bucket-ca-007"
-  location      = "US"
-  project = "modular-scout-345114"
-  force_destroy = true
-
-  lifecycle_rule {
-    condition {
-      age = 3
-    }
-    action {
-      type = "Delete"
-    }
-  }
 }

@@ -1,0 +1,371 @@
+import "strings"
+
+providers = {
+	"google": {
+		"alias":               "",
+		"config":              {},
+		"module_address":      "",
+		"name":                "google",
+		"provider_config_key": "google",
+		"version_constraint":  "",
+	},
+	"tls": {
+		"alias":               "",
+		"config":              {},
+		"module_address":      "",
+		"name":                "tls",
+		"provider_config_key": "tls",
+		"version_constraint":  "",
+	},
+}
+
+resources = {
+	"google_privateca_ca_pool.default": {
+		"address": "google_privateca_ca_pool.default",
+		"config": {
+			"issuance_policy": [
+				{
+					"baseline_values": [
+						{
+							"ca_options": [
+								{
+									"is_ca": {
+										"constant_value": false,
+									},
+								},
+							],
+							"key_usage": [
+								{
+									"base_key_usage": [
+										{
+											"digital_signature": {
+												"constant_value": true,
+											},
+											"key_encipherment": {
+												"constant_value": true,
+											},
+										},
+									],
+									"extended_key_usage": [
+										{
+											"server_auth": {
+												"constant_value": true,
+											},
+										},
+									],
+								},
+							],
+						},
+					],
+				},
+			],
+			"labels": {
+				"constant_value": {
+					"foo": "bar",
+				},
+			},
+			"location": {
+				"constant_value": "us-central1",
+			},
+			"name": {
+				"constant_value": "my-ca-pool-05",
+			},
+			"project": {
+				"constant_value": "modular-scout-345114",
+			},
+			"publishing_options": [
+				{
+					"publish_ca_cert": {
+						"constant_value": true,
+					},
+					"publish_crl": {
+						"constant_value": true,
+					},
+				},
+			],
+			"tier": {
+				"constant_value": "ENTERPRISE",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "default",
+		"provider_config_key": "google",
+		"provisioners":        [],
+		"type":                "google_privateca_ca_pool",
+	},
+	"google_privateca_certificate.default": {
+		"address": "google_privateca_certificate.default",
+		"config": {
+			"certificate_authority": {
+				"references": [
+					"google_privateca_certificate_authority.test-ca5.certificate_authority_id",
+					"google_privateca_certificate_authority.test-ca5",
+				],
+			},
+			"lifetime": {
+				"constant_value": "860s",
+			},
+			"location": {
+				"constant_value": "us-central1",
+			},
+			"name": {
+				"constant_value": "my-certificate",
+			},
+			"pem_csr": {
+				"references": [
+					"tls_cert_request.example.cert_request_pem",
+					"tls_cert_request.example",
+				],
+			},
+			"pool": {
+				"references": [
+					"google_privateca_ca_pool.default.name",
+					"google_privateca_ca_pool.default",
+				],
+			},
+			"project": {
+				"constant_value": "modular-scout-345114",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "default",
+		"provider_config_key": "google",
+		"provisioners":        [],
+		"type":                "google_privateca_certificate",
+	},
+	"google_privateca_certificate_authority.test-ca5": {
+		"address": "google_privateca_certificate_authority.test-ca5",
+		"config": {
+			"certificate_authority_id": {
+				"constant_value": "my-authority5",
+			},
+			"config": [
+				{
+					"subject_config": [
+						{
+							"subject": [
+								{
+									"common_name": {
+										"constant_value": "my-certificate-authority",
+									},
+									"country_code": {
+										"constant_value": "us",
+									},
+									"locality": {
+										"constant_value": "mountain view",
+									},
+									"organization": {
+										"constant_value": "google",
+									},
+									"organizational_unit": {
+										"constant_value": "enterprise",
+									},
+									"postal_code": {
+										"constant_value": "94109",
+									},
+									"province": {
+										"constant_value": "california",
+									},
+									"street_address": {
+										"constant_value": "1600 amphitheatre parkway",
+									},
+								},
+							],
+						},
+					],
+					"x509_config": [
+						{
+							"ca_options": [
+								{
+									"is_ca": {
+										"constant_value": true,
+									},
+								},
+							],
+							"key_usage": [
+								{
+									"base_key_usage": [
+										{
+											"cert_sign": {
+												"constant_value": true,
+											},
+											"crl_sign": {
+												"constant_value": true,
+											},
+										},
+									],
+									"extended_key_usage": [
+										{
+											"server_auth": {
+												"constant_value": true,
+											},
+										},
+									],
+								},
+							],
+						},
+					],
+				},
+			],
+			"deletion_protection": {
+				"constant_value": false,
+			},
+			"gcs_bucket": {
+				"references": [
+					"google_storage_bucket.default.url",
+					"google_storage_bucket.default",
+				],
+			},
+			"key_spec": [
+				{
+					"algorithm": {
+						"constant_value": "RSA_PSS_2048_SHA256",
+					},
+				},
+			],
+			"location": {
+				"constant_value": "us-central1",
+			},
+			"pool": {
+				"references": [
+					"google_privateca_ca_pool.default.name",
+					"google_privateca_ca_pool.default",
+				],
+			},
+			"project": {
+				"constant_value": "modular-scout-345114",
+			},
+			"type": {
+				"constant_value": "SELF_SIGNED",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "test-ca5",
+		"provider_config_key": "google",
+		"provisioners":        [],
+		"type":                "google_privateca_certificate_authority",
+	},
+	"google_storage_bucket.default": {
+		"address": "google_storage_bucket.default",
+		"config": {
+			"force_destroy": {
+				"constant_value": true,
+			},
+			"lifecycle_rule": [
+				{
+					"action": [
+						{
+							"type": {
+								"constant_value": "Delete",
+							},
+						},
+					],
+					"condition": [
+						{
+							"age": {
+								"constant_value": 3,
+							},
+						},
+					],
+				},
+			],
+			"location": {
+				"constant_value": "US",
+			},
+			"name": {
+				"constant_value": "bucket-ca-007",
+			},
+			"project": {
+				"constant_value": "modular-scout-345114",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "default",
+		"provider_config_key": "google",
+		"provisioners":        [],
+		"type":                "google_storage_bucket",
+	},
+	"tls_cert_request.example": {
+		"address": "tls_cert_request.example",
+		"config": {
+			"key_algorithm": {
+				"constant_value": "RSA",
+			},
+			"private_key_pem": {
+				"references": [
+					"tls_private_key.example.private_key_pem",
+					"tls_private_key.example",
+				],
+			},
+			"subject": [
+				{
+					"common_name": {
+						"constant_value": "example.com",
+					},
+					"organization": {
+						"constant_value": "ACME Examples, Inc",
+					},
+				},
+			],
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "tls",
+		"provisioners":        [],
+		"type":                "tls_cert_request",
+	},
+	"tls_private_key.example": {
+		"address": "tls_private_key.example",
+		"config": {
+			"algorithm": {
+				"constant_value": "RSA",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "example",
+		"provider_config_key": "tls",
+		"provisioners":        [],
+		"type":                "tls_private_key",
+	},
+}
+
+provisioners = {}
+
+variables = {}
+
+outputs = {}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}

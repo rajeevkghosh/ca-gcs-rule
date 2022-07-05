@@ -1,0 +1,37 @@
+id = "run-cfwZwQF7BKRvzm7L"
+created_at = "2022-07-05T06:01:44.300Z"
+message = "Triggered via UI"
+commit_sha = "18cfe3b906867ce95e143da2489551f6f047af58"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+
+variables = {
+	"GOOGLE_CREDENTIALS": {
+		"category":  "env",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "Wells-Phase3",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2022-07-05T05:49:06.783Z",
+	"description": null,
+	"id":          "ws-zLUuHH7q6V91Q4dM",
+	"name":        "ca-gcs-bucket-rule",
+	"tags":        [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "rajeevkghosh/ca-gcs-rule",
+		"identifier":         "rajeevkghosh/ca-gcs-rule",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}
