@@ -1,0 +1,2327 @@
+terraform_version = "1.2.4"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_kms_crypto_key.key5": {
+			"address":        "google_kms_crypto_key.key5",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "key5",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_kms_crypto_key",
+			"values": {
+				"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+				"labels":                        null,
+				"name":                          "crypto-key-5",
+				"purpose":                       "ASYMMETRIC_SIGN",
+				"rotation_period":               null,
+				"skip_initial_version_creation": null,
+				"timeouts":                      null,
+				"version_template": [
+					{
+						"algorithm":        "EC_SIGN_P384_SHA384",
+						"protection_level": "SOFTWARE",
+					},
+				],
+			},
+		},
+		"google_kms_crypto_key.key6": {
+			"address":        "google_kms_crypto_key.key6",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "key6",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_kms_crypto_key",
+			"values": {
+				"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+				"labels":                        null,
+				"name":                          "crypto-key-6",
+				"purpose":                       "ASYMMETRIC_SIGN",
+				"rotation_period":               null,
+				"skip_initial_version_creation": null,
+				"timeouts":                      null,
+				"version_template": [
+					{
+						"algorithm":        "EC_SIGN_P384_SHA384",
+						"protection_level": "EXTERNAL",
+					},
+				],
+			},
+		},
+		"google_kms_crypto_key.key7": {
+			"address":        "google_kms_crypto_key.key7",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "key7",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_kms_crypto_key",
+			"values": {
+				"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+				"labels":                        null,
+				"name":                          "crypto-key-7",
+				"purpose":                       "ASYMMETRIC_SIGN",
+				"rotation_period":               null,
+				"skip_initial_version_creation": null,
+				"timeouts":                      null,
+				"version_template": [
+					{
+						"algorithm":        "EC_SIGN_P384_SHA384",
+						"protection_level": "HSM",
+					},
+				],
+			},
+		},
+		"google_privateca_ca_pool.default": {
+			"address":        "google_privateca_ca_pool.default",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "default",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_privateca_ca_pool",
+			"values": {
+				"issuance_policy": [
+					{
+						"allowed_issuance_modes": [],
+						"allowed_key_types":      [],
+						"baseline_values": [
+							{
+								"additional_extensions": [],
+								"aia_ocsp_servers":      null,
+								"ca_options": [
+									{
+										"is_ca":                       false,
+										"max_issuer_path_length":      null,
+										"non_ca":                      null,
+										"zero_max_issuer_path_length": null,
+									},
+								],
+								"key_usage": [
+									{
+										"base_key_usage": [
+											{
+												"cert_sign":          null,
+												"content_commitment": null,
+												"crl_sign":           null,
+												"data_encipherment":  null,
+												"decipher_only":      null,
+												"digital_signature":  true,
+												"encipher_only":      null,
+												"key_agreement":      null,
+												"key_encipherment":   true,
+											},
+										],
+										"extended_key_usage": [
+											{
+												"client_auth":      null,
+												"code_signing":     null,
+												"email_protection": null,
+												"ocsp_signing":     null,
+												"server_auth":      true,
+												"time_stamping":    null,
+											},
+										],
+										"unknown_extended_key_usages": [],
+									},
+								],
+								"policy_ids": [],
+							},
+						],
+						"identity_constraints": [],
+						"maximum_lifetime":     null,
+					},
+				],
+				"labels": {
+					"foo": "bar",
+				},
+				"location": "us-central1",
+				"name":     "my-ca-pool-04",
+				"project":  "modular-scout-345114",
+				"publishing_options": [
+					{
+						"publish_ca_cert": true,
+						"publish_crl":     true,
+					},
+				],
+				"tier":     "ENTERPRISE",
+				"timeouts": null,
+			},
+		},
+		"google_privateca_certificate.default": {
+			"address":        "google_privateca_certificate.default",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "default",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_privateca_certificate",
+			"values": {
+				"certificate_authority": "my-authority4",
+				"certificate_template":  null,
+				"config":                [],
+				"labels":                null,
+				"lifetime":              "860s",
+				"location":              "us-central1",
+				"name":                  "my-certificate",
+				"pool":                  "my-ca-pool-04",
+				"project":               "modular-scout-345114",
+				"timeouts":              null,
+			},
+		},
+		"google_privateca_certificate_authority.test-ca4": {
+			"address":        "google_privateca_certificate_authority.test-ca4",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "test-ca4",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_privateca_certificate_authority",
+			"values": {
+				"certificate_authority_id": "my-authority4",
+				"config": [
+					{
+						"subject_config": [
+							{
+								"subject": [
+									{
+										"common_name":         "my-certificate-authority",
+										"country_code":        "us",
+										"locality":            "mountain view",
+										"organization":        "google",
+										"organizational_unit": "enterprise",
+										"postal_code":         "94109",
+										"province":            "california",
+										"street_address":      "1600 amphitheatre parkway",
+									},
+								],
+								"subject_alt_name": [],
+							},
+						],
+						"x509_config": [
+							{
+								"additional_extensions": [],
+								"aia_ocsp_servers":      null,
+								"ca_options": [
+									{
+										"is_ca":                       true,
+										"max_issuer_path_length":      null,
+										"non_ca":                      null,
+										"zero_max_issuer_path_length": null,
+									},
+								],
+								"key_usage": [
+									{
+										"base_key_usage": [
+											{
+												"cert_sign":          true,
+												"content_commitment": null,
+												"crl_sign":           true,
+												"data_encipherment":  null,
+												"decipher_only":      null,
+												"digital_signature":  null,
+												"encipher_only":      null,
+												"key_agreement":      null,
+												"key_encipherment":   null,
+											},
+										],
+										"extended_key_usage": [
+											{
+												"client_auth":      null,
+												"code_signing":     null,
+												"email_protection": null,
+												"ocsp_signing":     null,
+												"server_auth":      true,
+												"time_stamping":    null,
+											},
+										],
+										"unknown_extended_key_usages": [],
+									},
+								],
+								"policy_ids": [],
+							},
+						],
+					},
+				],
+				"deletion_protection":                    false,
+				"desired_state":                          null,
+				"gcs_bucket":                             null,
+				"ignore_active_certificates_on_deletion": false,
+				"key_spec": [
+					{
+						"algorithm":             null,
+						"cloud_kms_key_version": "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+					},
+				],
+				"labels":   null,
+				"lifetime": "315360000s",
+				"location": "us-central1",
+				"pool":     "my-ca-pool-04",
+				"project":  "modular-scout-345114",
+				"timeouts": null,
+				"type":     "SELF_SIGNED",
+			},
+		},
+		"tls_cert_request.example": {
+			"address":        "tls_cert_request.example",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "example",
+			"provider_name":  "registry.terraform.io/hashicorp/tls",
+			"tainted":        false,
+			"type":           "tls_cert_request",
+			"values": {
+				"dns_names":     null,
+				"ip_addresses":  null,
+				"key_algorithm": "RSA",
+				"subject": [
+					{
+						"common_name":         "example.com",
+						"country":             null,
+						"locality":            null,
+						"organization":        "ACME Examples, Inc",
+						"organizational_unit": null,
+						"postal_code":         null,
+						"province":            null,
+						"serial_number":       null,
+						"street_address":      null,
+					},
+				],
+				"uris": null,
+			},
+		},
+		"tls_private_key.example": {
+			"address":        "tls_private_key.example",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "example",
+			"provider_name":  "registry.terraform.io/hashicorp/tls",
+			"tainted":        false,
+			"type":           "tls_private_key",
+			"values": {
+				"algorithm":   "RSA",
+				"ecdsa_curve": "P224",
+				"rsa_bits":    2048,
+			},
+		},
+	},
+}
+
+variables = {}
+
+resource_changes = {
+	"google_kms_crypto_key.key5": {
+		"address": "google_kms_crypto_key.key5",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+				"labels":                        null,
+				"name":                          "crypto-key-5",
+				"purpose":                       "ASYMMETRIC_SIGN",
+				"rotation_period":               null,
+				"skip_initial_version_creation": null,
+				"timeouts":                      null,
+				"version_template": [
+					{
+						"algorithm":        "EC_SIGN_P384_SHA384",
+						"protection_level": "SOFTWARE",
+					},
+				],
+			},
+			"after_unknown": {
+				"destroy_scheduled_duration": true,
+				"id":          true,
+				"import_only": true,
+				"version_template": [
+					{},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "key5",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_kms_crypto_key",
+	},
+	"google_kms_crypto_key.key6": {
+		"address": "google_kms_crypto_key.key6",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+				"labels":                        null,
+				"name":                          "crypto-key-6",
+				"purpose":                       "ASYMMETRIC_SIGN",
+				"rotation_period":               null,
+				"skip_initial_version_creation": null,
+				"timeouts":                      null,
+				"version_template": [
+					{
+						"algorithm":        "EC_SIGN_P384_SHA384",
+						"protection_level": "EXTERNAL",
+					},
+				],
+			},
+			"after_unknown": {
+				"destroy_scheduled_duration": true,
+				"id":          true,
+				"import_only": true,
+				"version_template": [
+					{},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "key6",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_kms_crypto_key",
+	},
+	"google_kms_crypto_key.key7": {
+		"address": "google_kms_crypto_key.key7",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+				"labels":                        null,
+				"name":                          "crypto-key-7",
+				"purpose":                       "ASYMMETRIC_SIGN",
+				"rotation_period":               null,
+				"skip_initial_version_creation": null,
+				"timeouts":                      null,
+				"version_template": [
+					{
+						"algorithm":        "EC_SIGN_P384_SHA384",
+						"protection_level": "HSM",
+					},
+				],
+			},
+			"after_unknown": {
+				"destroy_scheduled_duration": true,
+				"id":          true,
+				"import_only": true,
+				"version_template": [
+					{},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "key7",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_kms_crypto_key",
+	},
+	"google_privateca_ca_pool.default": {
+		"address": "google_privateca_ca_pool.default",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"issuance_policy": [
+					{
+						"allowed_issuance_modes": [],
+						"allowed_key_types":      [],
+						"baseline_values": [
+							{
+								"additional_extensions": [],
+								"aia_ocsp_servers":      null,
+								"ca_options": [
+									{
+										"is_ca":                       false,
+										"max_issuer_path_length":      null,
+										"non_ca":                      null,
+										"zero_max_issuer_path_length": null,
+									},
+								],
+								"key_usage": [
+									{
+										"base_key_usage": [
+											{
+												"cert_sign":          null,
+												"content_commitment": null,
+												"crl_sign":           null,
+												"data_encipherment":  null,
+												"decipher_only":      null,
+												"digital_signature":  true,
+												"encipher_only":      null,
+												"key_agreement":      null,
+												"key_encipherment":   true,
+											},
+										],
+										"extended_key_usage": [
+											{
+												"client_auth":      null,
+												"code_signing":     null,
+												"email_protection": null,
+												"ocsp_signing":     null,
+												"server_auth":      true,
+												"time_stamping":    null,
+											},
+										],
+										"unknown_extended_key_usages": [],
+									},
+								],
+								"policy_ids": [],
+							},
+						],
+						"identity_constraints": [],
+						"maximum_lifetime":     null,
+					},
+				],
+				"labels": {
+					"foo": "bar",
+				},
+				"location": "us-central1",
+				"name":     "my-ca-pool-04",
+				"project":  "modular-scout-345114",
+				"publishing_options": [
+					{
+						"publish_ca_cert": true,
+						"publish_crl":     true,
+					},
+				],
+				"tier":     "ENTERPRISE",
+				"timeouts": null,
+			},
+			"after_unknown": {
+				"id": true,
+				"issuance_policy": [
+					{
+						"allowed_issuance_modes": [],
+						"allowed_key_types":      [],
+						"baseline_values": [
+							{
+								"additional_extensions": [],
+								"ca_options": [
+									{},
+								],
+								"key_usage": [
+									{
+										"base_key_usage": [
+											{},
+										],
+										"extended_key_usage": [
+											{},
+										],
+										"unknown_extended_key_usages": [],
+									},
+								],
+								"policy_ids": [],
+							},
+						],
+						"identity_constraints": [],
+					},
+				],
+				"labels": {},
+				"publishing_options": [
+					{},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "default",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_privateca_ca_pool",
+	},
+	"google_privateca_certificate.default": {
+		"address": "google_privateca_certificate.default",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"certificate_authority": "my-authority4",
+				"certificate_template":  null,
+				"config":                [],
+				"labels":                null,
+				"lifetime":              "860s",
+				"location":              "us-central1",
+				"name":                  "my-certificate",
+				"pool":                  "my-ca-pool-04",
+				"project":               "modular-scout-345114",
+				"timeouts":              null,
+			},
+			"after_unknown": {
+				"certificate_description": true,
+				"config":                  [],
+				"create_time":             true,
+				"id":                      true,
+				"issuer_certificate_authority": true,
+				"pem_certificate":              true,
+				"pem_certificate_chain":        true,
+				"pem_certificates":             true,
+				"pem_csr":                      true,
+				"revocation_details":           true,
+				"update_time":                  true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "default",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_privateca_certificate",
+	},
+	"google_privateca_certificate_authority.test-ca4": {
+		"address": "google_privateca_certificate_authority.test-ca4",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"certificate_authority_id": "my-authority4",
+				"config": [
+					{
+						"subject_config": [
+							{
+								"subject": [
+									{
+										"common_name":         "my-certificate-authority",
+										"country_code":        "us",
+										"locality":            "mountain view",
+										"organization":        "google",
+										"organizational_unit": "enterprise",
+										"postal_code":         "94109",
+										"province":            "california",
+										"street_address":      "1600 amphitheatre parkway",
+									},
+								],
+								"subject_alt_name": [],
+							},
+						],
+						"x509_config": [
+							{
+								"additional_extensions": [],
+								"aia_ocsp_servers":      null,
+								"ca_options": [
+									{
+										"is_ca":                       true,
+										"max_issuer_path_length":      null,
+										"non_ca":                      null,
+										"zero_max_issuer_path_length": null,
+									},
+								],
+								"key_usage": [
+									{
+										"base_key_usage": [
+											{
+												"cert_sign":          true,
+												"content_commitment": null,
+												"crl_sign":           true,
+												"data_encipherment":  null,
+												"decipher_only":      null,
+												"digital_signature":  null,
+												"encipher_only":      null,
+												"key_agreement":      null,
+												"key_encipherment":   null,
+											},
+										],
+										"extended_key_usage": [
+											{
+												"client_auth":      null,
+												"code_signing":     null,
+												"email_protection": null,
+												"ocsp_signing":     null,
+												"server_auth":      true,
+												"time_stamping":    null,
+											},
+										],
+										"unknown_extended_key_usages": [],
+									},
+								],
+								"policy_ids": [],
+							},
+						],
+					},
+				],
+				"deletion_protection":                    false,
+				"desired_state":                          null,
+				"gcs_bucket":                             null,
+				"ignore_active_certificates_on_deletion": false,
+				"key_spec": [
+					{
+						"algorithm":             null,
+						"cloud_kms_key_version": "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+					},
+				],
+				"labels":   null,
+				"lifetime": "315360000s",
+				"location": "us-central1",
+				"pool":     "my-ca-pool-04",
+				"project":  "modular-scout-345114",
+				"timeouts": null,
+				"type":     "SELF_SIGNED",
+			},
+			"after_unknown": {
+				"access_urls": true,
+				"config": [
+					{
+						"subject_config": [
+							{
+								"subject": [
+									{},
+								],
+								"subject_alt_name": [],
+							},
+						],
+						"x509_config": [
+							{
+								"additional_extensions": [],
+								"ca_options": [
+									{},
+								],
+								"key_usage": [
+									{
+										"base_key_usage": [
+											{},
+										],
+										"extended_key_usage": [
+											{},
+										],
+										"unknown_extended_key_usages": [],
+									},
+								],
+								"policy_ids": [],
+							},
+						],
+					},
+				],
+				"create_time": true,
+				"id":          true,
+				"key_spec": [
+					{},
+				],
+				"name":                true,
+				"pem_ca_certificates": true,
+				"state":               true,
+				"update_time":         true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "test-ca4",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_privateca_certificate_authority",
+	},
+	"tls_cert_request.example": {
+		"address": "tls_cert_request.example",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"dns_names":     null,
+				"ip_addresses":  null,
+				"key_algorithm": "RSA",
+				"subject": [
+					{
+						"common_name":         "example.com",
+						"country":             null,
+						"locality":            null,
+						"organization":        "ACME Examples, Inc",
+						"organizational_unit": null,
+						"postal_code":         null,
+						"province":            null,
+						"serial_number":       null,
+						"street_address":      null,
+					},
+				],
+				"uris": null,
+			},
+			"after_unknown": {
+				"cert_request_pem": true,
+				"id":               true,
+				"private_key_pem":  true,
+				"subject": [
+					{},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "example",
+		"provider_name":  "registry.terraform.io/hashicorp/tls",
+		"type":           "tls_cert_request",
+	},
+	"tls_private_key.example": {
+		"address": "tls_private_key.example",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"algorithm":   "RSA",
+				"ecdsa_curve": "P224",
+				"rsa_bits":    2048,
+			},
+			"after_unknown": {
+				"id": true,
+				"private_key_openssh":           true,
+				"private_key_pem":               true,
+				"public_key_fingerprint_md5":    true,
+				"public_key_fingerprint_sha256": true,
+				"public_key_openssh":            true,
+				"public_key_pem":                true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "example",
+		"provider_name":  "registry.terraform.io/hashicorp/tls",
+		"type":           "tls_private_key",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"name": "google",
+			},
+			"tls": {
+				"name": "tls",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_kms_crypto_key.key5",
+					"expressions": {
+						"key_ring": {
+							"references": [
+								"data.google_kms_key_ring.keyring-1.id",
+								"data.google_kms_key_ring.keyring-1",
+							],
+						},
+						"name": {
+							"constant_value": "crypto-key-5",
+						},
+						"purpose": {
+							"constant_value": "ASYMMETRIC_SIGN",
+						},
+						"version_template": [
+							{
+								"algorithm": {
+									"constant_value": "EC_SIGN_P384_SHA384",
+								},
+								"protection_level": {
+									"constant_value": "SOFTWARE",
+								},
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "key5",
+					"provider_config_key": "google",
+					"schema_version":      1,
+					"type":                "google_kms_crypto_key",
+				},
+				{
+					"address": "google_kms_crypto_key.key6",
+					"expressions": {
+						"key_ring": {
+							"references": [
+								"data.google_kms_key_ring.keyring-1.id",
+								"data.google_kms_key_ring.keyring-1",
+							],
+						},
+						"name": {
+							"constant_value": "crypto-key-6",
+						},
+						"purpose": {
+							"constant_value": "ASYMMETRIC_SIGN",
+						},
+						"version_template": [
+							{
+								"algorithm": {
+									"constant_value": "EC_SIGN_P384_SHA384",
+								},
+								"protection_level": {
+									"constant_value": "EXTERNAL",
+								},
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "key6",
+					"provider_config_key": "google",
+					"schema_version":      1,
+					"type":                "google_kms_crypto_key",
+				},
+				{
+					"address": "google_kms_crypto_key.key7",
+					"expressions": {
+						"key_ring": {
+							"references": [
+								"data.google_kms_key_ring.keyring-1.id",
+								"data.google_kms_key_ring.keyring-1",
+							],
+						},
+						"name": {
+							"constant_value": "crypto-key-7",
+						},
+						"purpose": {
+							"constant_value": "ASYMMETRIC_SIGN",
+						},
+						"version_template": [
+							{
+								"algorithm": {
+									"constant_value": "EC_SIGN_P384_SHA384",
+								},
+								"protection_level": {
+									"constant_value": "HSM",
+								},
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "key7",
+					"provider_config_key": "google",
+					"schema_version":      1,
+					"type":                "google_kms_crypto_key",
+				},
+				{
+					"address": "google_privateca_ca_pool.default",
+					"expressions": {
+						"issuance_policy": [
+							{
+								"baseline_values": [
+									{
+										"ca_options": [
+											{
+												"is_ca": {
+													"constant_value": false,
+												},
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"digital_signature": {
+															"constant_value": true,
+														},
+														"key_encipherment": {
+															"constant_value": true,
+														},
+													},
+												],
+												"extended_key_usage": [
+													{
+														"server_auth": {
+															"constant_value": true,
+														},
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"labels": {
+							"constant_value": {
+								"foo": "bar",
+							},
+						},
+						"location": {
+							"constant_value": "us-central1",
+						},
+						"name": {
+							"constant_value": "my-ca-pool-04",
+						},
+						"project": {
+							"constant_value": "modular-scout-345114",
+						},
+						"publishing_options": [
+							{
+								"publish_ca_cert": {
+									"constant_value": true,
+								},
+								"publish_crl": {
+									"constant_value": true,
+								},
+							},
+						],
+						"tier": {
+							"constant_value": "ENTERPRISE",
+						},
+					},
+					"mode":                "managed",
+					"name":                "default",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_privateca_ca_pool",
+				},
+				{
+					"address": "google_privateca_certificate.default",
+					"expressions": {
+						"certificate_authority": {
+							"references": [
+								"google_privateca_certificate_authority.test-ca4.certificate_authority_id",
+								"google_privateca_certificate_authority.test-ca4",
+							],
+						},
+						"lifetime": {
+							"constant_value": "860s",
+						},
+						"location": {
+							"constant_value": "us-central1",
+						},
+						"name": {
+							"constant_value": "my-certificate",
+						},
+						"pem_csr": {
+							"references": [
+								"tls_cert_request.example.cert_request_pem",
+								"tls_cert_request.example",
+							],
+						},
+						"pool": {
+							"references": [
+								"google_privateca_ca_pool.default.name",
+								"google_privateca_ca_pool.default",
+							],
+						},
+						"project": {
+							"constant_value": "modular-scout-345114",
+						},
+					},
+					"mode":                "managed",
+					"name":                "default",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_privateca_certificate",
+				},
+				{
+					"address": "google_privateca_certificate_authority.test-ca4",
+					"expressions": {
+						"certificate_authority_id": {
+							"constant_value": "my-authority4",
+						},
+						"config": [
+							{
+								"subject_config": [
+									{
+										"subject": [
+											{
+												"common_name": {
+													"constant_value": "my-certificate-authority",
+												},
+												"country_code": {
+													"constant_value": "us",
+												},
+												"locality": {
+													"constant_value": "mountain view",
+												},
+												"organization": {
+													"constant_value": "google",
+												},
+												"organizational_unit": {
+													"constant_value": "enterprise",
+												},
+												"postal_code": {
+													"constant_value": "94109",
+												},
+												"province": {
+													"constant_value": "california",
+												},
+												"street_address": {
+													"constant_value": "1600 amphitheatre parkway",
+												},
+											},
+										],
+									},
+								],
+								"x509_config": [
+									{
+										"ca_options": [
+											{
+												"is_ca": {
+													"constant_value": true,
+												},
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"cert_sign": {
+															"constant_value": true,
+														},
+														"crl_sign": {
+															"constant_value": true,
+														},
+													},
+												],
+												"extended_key_usage": [
+													{
+														"server_auth": {
+															"constant_value": true,
+														},
+													},
+												],
+											},
+										],
+									},
+								],
+							},
+						],
+						"deletion_protection": {
+							"constant_value": false,
+						},
+						"key_spec": [
+							{
+								"cloud_kms_key_version": {
+									"references": [
+										"data.google_kms_crypto_key_version.crypto_key_version.name",
+										"data.google_kms_crypto_key_version.crypto_key_version",
+									],
+								},
+							},
+						],
+						"location": {
+							"constant_value": "us-central1",
+						},
+						"pool": {
+							"references": [
+								"google_privateca_ca_pool.default.name",
+								"google_privateca_ca_pool.default",
+							],
+						},
+						"project": {
+							"constant_value": "modular-scout-345114",
+						},
+						"type": {
+							"constant_value": "SELF_SIGNED",
+						},
+					},
+					"mode":                "managed",
+					"name":                "test-ca4",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_privateca_certificate_authority",
+				},
+				{
+					"address": "tls_cert_request.example",
+					"expressions": {
+						"key_algorithm": {
+							"constant_value": "RSA",
+						},
+						"private_key_pem": {
+							"references": [
+								"tls_private_key.example.private_key_pem",
+								"tls_private_key.example",
+							],
+						},
+						"subject": [
+							{
+								"common_name": {
+									"constant_value": "example.com",
+								},
+								"organization": {
+									"constant_value": "ACME Examples, Inc",
+								},
+							},
+						],
+					},
+					"mode":                "managed",
+					"name":                "example",
+					"provider_config_key": "tls",
+					"schema_version":      0,
+					"type":                "tls_cert_request",
+				},
+				{
+					"address": "tls_private_key.example",
+					"expressions": {
+						"algorithm": {
+							"constant_value": "RSA",
+						},
+					},
+					"mode":                "managed",
+					"name":                "example",
+					"provider_config_key": "tls",
+					"schema_version":      0,
+					"type":                "tls_private_key",
+				},
+				{
+					"address": "data.google_kms_crypto_key.cryptokey-4",
+					"expressions": {
+						"key_ring": {
+							"references": [
+								"data.google_kms_key_ring.keyring-1.id",
+								"data.google_kms_key_ring.keyring-1",
+							],
+						},
+						"name": {
+							"constant_value": "cryptokey-4",
+						},
+					},
+					"mode":                "data",
+					"name":                "cryptokey-4",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_kms_crypto_key",
+				},
+				{
+					"address": "data.google_kms_crypto_key_version.crypto_key_version",
+					"expressions": {
+						"crypto_key": {
+							"references": [
+								"data.google_kms_crypto_key.cryptokey-4.id",
+								"data.google_kms_crypto_key.cryptokey-4",
+							],
+						},
+					},
+					"mode":                "data",
+					"name":                "crypto_key_version",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_kms_crypto_key_version",
+				},
+				{
+					"address": "data.google_kms_key_ring.keyring-1",
+					"expressions": {
+						"location": {
+							"constant_value": "us-central1",
+						},
+						"name": {
+							"constant_value": "keyring-1",
+						},
+						"project": {
+							"constant_value": "modular-scout-345114",
+						},
+					},
+					"mode":                "data",
+					"name":                "keyring-1",
+					"provider_config_key": "google",
+					"schema_version":      0,
+					"type":                "google_kms_key_ring",
+				},
+			],
+		},
+	},
+	"format_version": "1.1",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_kms_crypto_key.key5",
+					"mode":           "managed",
+					"name":           "key5",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 1,
+					"sensitive_values": {
+						"version_template": [
+							{},
+						],
+					},
+					"type": "google_kms_crypto_key",
+					"values": {
+						"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+						"labels":                        null,
+						"name":                          "crypto-key-5",
+						"purpose":                       "ASYMMETRIC_SIGN",
+						"rotation_period":               null,
+						"skip_initial_version_creation": null,
+						"timeouts":                      null,
+						"version_template": [
+							{
+								"algorithm":        "EC_SIGN_P384_SHA384",
+								"protection_level": "SOFTWARE",
+							},
+						],
+					},
+				},
+				{
+					"address":        "google_kms_crypto_key.key6",
+					"mode":           "managed",
+					"name":           "key6",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 1,
+					"sensitive_values": {
+						"version_template": [
+							{},
+						],
+					},
+					"type": "google_kms_crypto_key",
+					"values": {
+						"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+						"labels":                        null,
+						"name":                          "crypto-key-6",
+						"purpose":                       "ASYMMETRIC_SIGN",
+						"rotation_period":               null,
+						"skip_initial_version_creation": null,
+						"timeouts":                      null,
+						"version_template": [
+							{
+								"algorithm":        "EC_SIGN_P384_SHA384",
+								"protection_level": "EXTERNAL",
+							},
+						],
+					},
+				},
+				{
+					"address":        "google_kms_crypto_key.key7",
+					"mode":           "managed",
+					"name":           "key7",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 1,
+					"sensitive_values": {
+						"version_template": [
+							{},
+						],
+					},
+					"type": "google_kms_crypto_key",
+					"values": {
+						"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+						"labels":                        null,
+						"name":                          "crypto-key-7",
+						"purpose":                       "ASYMMETRIC_SIGN",
+						"rotation_period":               null,
+						"skip_initial_version_creation": null,
+						"timeouts":                      null,
+						"version_template": [
+							{
+								"algorithm":        "EC_SIGN_P384_SHA384",
+								"protection_level": "HSM",
+							},
+						],
+					},
+				},
+				{
+					"address":        "google_privateca_ca_pool.default",
+					"mode":           "managed",
+					"name":           "default",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"issuance_policy": [
+							{
+								"allowed_issuance_modes": [],
+								"allowed_key_types":      [],
+								"baseline_values": [
+									{
+										"additional_extensions": [],
+										"ca_options": [
+											{},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{},
+												],
+												"extended_key_usage": [
+													{},
+												],
+												"unknown_extended_key_usages": [],
+											},
+										],
+										"policy_ids": [],
+									},
+								],
+								"identity_constraints": [],
+							},
+						],
+						"labels": {},
+						"publishing_options": [
+							{},
+						],
+					},
+					"type": "google_privateca_ca_pool",
+					"values": {
+						"issuance_policy": [
+							{
+								"allowed_issuance_modes": [],
+								"allowed_key_types":      [],
+								"baseline_values": [
+									{
+										"additional_extensions": [],
+										"aia_ocsp_servers":      null,
+										"ca_options": [
+											{
+												"is_ca":                       false,
+												"max_issuer_path_length":      null,
+												"non_ca":                      null,
+												"zero_max_issuer_path_length": null,
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"cert_sign":          null,
+														"content_commitment": null,
+														"crl_sign":           null,
+														"data_encipherment":  null,
+														"decipher_only":      null,
+														"digital_signature":  true,
+														"encipher_only":      null,
+														"key_agreement":      null,
+														"key_encipherment":   true,
+													},
+												],
+												"extended_key_usage": [
+													{
+														"client_auth":      null,
+														"code_signing":     null,
+														"email_protection": null,
+														"ocsp_signing":     null,
+														"server_auth":      true,
+														"time_stamping":    null,
+													},
+												],
+												"unknown_extended_key_usages": [],
+											},
+										],
+										"policy_ids": [],
+									},
+								],
+								"identity_constraints": [],
+								"maximum_lifetime":     null,
+							},
+						],
+						"labels": {
+							"foo": "bar",
+						},
+						"location": "us-central1",
+						"name":     "my-ca-pool-04",
+						"project":  "modular-scout-345114",
+						"publishing_options": [
+							{
+								"publish_ca_cert": true,
+								"publish_crl":     true,
+							},
+						],
+						"tier":     "ENTERPRISE",
+						"timeouts": null,
+					},
+				},
+				{
+					"address":        "google_privateca_certificate.default",
+					"mode":           "managed",
+					"name":           "default",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"certificate_description": [],
+						"config":                  [],
+						"pem_certificate_chain":   [],
+						"pem_certificates":        [],
+						"revocation_details":      [],
+					},
+					"type": "google_privateca_certificate",
+					"values": {
+						"certificate_authority": "my-authority4",
+						"certificate_template":  null,
+						"config":                [],
+						"labels":                null,
+						"lifetime":              "860s",
+						"location":              "us-central1",
+						"name":                  "my-certificate",
+						"pool":                  "my-ca-pool-04",
+						"project":               "modular-scout-345114",
+						"timeouts":              null,
+					},
+				},
+				{
+					"address":        "google_privateca_certificate_authority.test-ca4",
+					"mode":           "managed",
+					"name":           "test-ca4",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 0,
+					"sensitive_values": {
+						"access_urls": [],
+						"config": [
+							{
+								"subject_config": [
+									{
+										"subject": [
+											{},
+										],
+										"subject_alt_name": [],
+									},
+								],
+								"x509_config": [
+									{
+										"additional_extensions": [],
+										"ca_options": [
+											{},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{},
+												],
+												"extended_key_usage": [
+													{},
+												],
+												"unknown_extended_key_usages": [],
+											},
+										],
+										"policy_ids": [],
+									},
+								],
+							},
+						],
+						"key_spec": [
+							{},
+						],
+						"pem_ca_certificates": [],
+					},
+					"type": "google_privateca_certificate_authority",
+					"values": {
+						"certificate_authority_id": "my-authority4",
+						"config": [
+							{
+								"subject_config": [
+									{
+										"subject": [
+											{
+												"common_name":         "my-certificate-authority",
+												"country_code":        "us",
+												"locality":            "mountain view",
+												"organization":        "google",
+												"organizational_unit": "enterprise",
+												"postal_code":         "94109",
+												"province":            "california",
+												"street_address":      "1600 amphitheatre parkway",
+											},
+										],
+										"subject_alt_name": [],
+									},
+								],
+								"x509_config": [
+									{
+										"additional_extensions": [],
+										"aia_ocsp_servers":      null,
+										"ca_options": [
+											{
+												"is_ca":                       true,
+												"max_issuer_path_length":      null,
+												"non_ca":                      null,
+												"zero_max_issuer_path_length": null,
+											},
+										],
+										"key_usage": [
+											{
+												"base_key_usage": [
+													{
+														"cert_sign":          true,
+														"content_commitment": null,
+														"crl_sign":           true,
+														"data_encipherment":  null,
+														"decipher_only":      null,
+														"digital_signature":  null,
+														"encipher_only":      null,
+														"key_agreement":      null,
+														"key_encipherment":   null,
+													},
+												],
+												"extended_key_usage": [
+													{
+														"client_auth":      null,
+														"code_signing":     null,
+														"email_protection": null,
+														"ocsp_signing":     null,
+														"server_auth":      true,
+														"time_stamping":    null,
+													},
+												],
+												"unknown_extended_key_usages": [],
+											},
+										],
+										"policy_ids": [],
+									},
+								],
+							},
+						],
+						"deletion_protection":                    false,
+						"desired_state":                          null,
+						"gcs_bucket":                             null,
+						"ignore_active_certificates_on_deletion": false,
+						"key_spec": [
+							{
+								"algorithm":             null,
+								"cloud_kms_key_version": "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+							},
+						],
+						"labels":   null,
+						"lifetime": "315360000s",
+						"location": "us-central1",
+						"pool":     "my-ca-pool-04",
+						"project":  "modular-scout-345114",
+						"timeouts": null,
+						"type":     "SELF_SIGNED",
+					},
+				},
+				{
+					"address":        "tls_cert_request.example",
+					"mode":           "managed",
+					"name":           "example",
+					"provider_name":  "registry.terraform.io/hashicorp/tls",
+					"schema_version": 0,
+					"sensitive_values": {
+						"private_key_pem": true,
+						"subject": [
+							{},
+						],
+					},
+					"type": "tls_cert_request",
+					"values": {
+						"dns_names":     null,
+						"ip_addresses":  null,
+						"key_algorithm": "RSA",
+						"subject": [
+							{
+								"common_name":         "example.com",
+								"country":             null,
+								"locality":            null,
+								"organization":        "ACME Examples, Inc",
+								"organizational_unit": null,
+								"postal_code":         null,
+								"province":            null,
+								"serial_number":       null,
+								"street_address":      null,
+							},
+						],
+						"uris": null,
+					},
+				},
+				{
+					"address":          "tls_private_key.example",
+					"mode":             "managed",
+					"name":             "example",
+					"provider_name":    "registry.terraform.io/hashicorp/tls",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "tls_private_key",
+					"values": {
+						"algorithm":   "RSA",
+						"ecdsa_curve": "P224",
+						"rsa_bits":    2048,
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "1.0",
+		"terraform_version": "1.2.4",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":        "data.google_kms_crypto_key.cryptokey-4",
+						"mode":           "data",
+						"name":           "cryptokey-4",
+						"provider_name":  "registry.terraform.io/hashicorp/google",
+						"schema_version": 0,
+						"sensitive_values": {
+							"labels": {},
+							"version_template": [
+								{},
+							],
+						},
+						"type": "google_kms_crypto_key",
+						"values": {
+							"destroy_scheduled_duration": "86400s",
+							"id":                            "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4",
+							"import_only":                   false,
+							"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+							"labels":                        {},
+							"name":                          "cryptokey-4",
+							"purpose":                       "ENCRYPT_DECRYPT",
+							"rotation_period":               "7776000s",
+							"skip_initial_version_creation": null,
+							"version_template": [
+								{
+									"algorithm":        "GOOGLE_SYMMETRIC_ENCRYPTION",
+									"protection_level": "HSM",
+								},
+							],
+						},
+					},
+					{
+						"address":          "data.google_kms_crypto_key_version.crypto_key_version",
+						"mode":             "data",
+						"name":             "crypto_key_version",
+						"provider_name":    "registry.terraform.io/hashicorp/google",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "google_kms_crypto_key_version",
+						"values": {
+							"algorithm":        "GOOGLE_SYMMETRIC_ENCRYPTION",
+							"crypto_key":       "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4",
+							"id":               "//cloudkms.googleapis.com/v1/projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+							"name":             "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+							"protection_level": "HSM",
+							"public_key":       null,
+							"state":            "ENABLED",
+							"version":          1,
+						},
+					},
+					{
+						"address":          "data.google_kms_key_ring.keyring-1",
+						"mode":             "data",
+						"name":             "keyring-1",
+						"provider_name":    "registry.terraform.io/hashicorp/google",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "google_kms_key_ring",
+						"values": {
+							"id":       "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+							"location": "us-central1",
+							"name":     "keyring-1",
+							"project":  "modular-scout-345114",
+						},
+					},
+				],
+			},
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_kms_crypto_key.key5",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+					"labels":                        null,
+					"name":                          "crypto-key-5",
+					"purpose":                       "ASYMMETRIC_SIGN",
+					"rotation_period":               null,
+					"skip_initial_version_creation": null,
+					"timeouts":                      null,
+					"version_template": [
+						{
+							"algorithm":        "EC_SIGN_P384_SHA384",
+							"protection_level": "SOFTWARE",
+						},
+					],
+				},
+				"after_sensitive": {
+					"version_template": [
+						{},
+					],
+				},
+				"after_unknown": {
+					"destroy_scheduled_duration": true,
+					"id":          true,
+					"import_only": true,
+					"version_template": [
+						{},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "key5",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_kms_crypto_key",
+		},
+		{
+			"address": "google_kms_crypto_key.key6",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+					"labels":                        null,
+					"name":                          "crypto-key-6",
+					"purpose":                       "ASYMMETRIC_SIGN",
+					"rotation_period":               null,
+					"skip_initial_version_creation": null,
+					"timeouts":                      null,
+					"version_template": [
+						{
+							"algorithm":        "EC_SIGN_P384_SHA384",
+							"protection_level": "EXTERNAL",
+						},
+					],
+				},
+				"after_sensitive": {
+					"version_template": [
+						{},
+					],
+				},
+				"after_unknown": {
+					"destroy_scheduled_duration": true,
+					"id":          true,
+					"import_only": true,
+					"version_template": [
+						{},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "key6",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_kms_crypto_key",
+		},
+		{
+			"address": "google_kms_crypto_key.key7",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+					"labels":                        null,
+					"name":                          "crypto-key-7",
+					"purpose":                       "ASYMMETRIC_SIGN",
+					"rotation_period":               null,
+					"skip_initial_version_creation": null,
+					"timeouts":                      null,
+					"version_template": [
+						{
+							"algorithm":        "EC_SIGN_P384_SHA384",
+							"protection_level": "HSM",
+						},
+					],
+				},
+				"after_sensitive": {
+					"version_template": [
+						{},
+					],
+				},
+				"after_unknown": {
+					"destroy_scheduled_duration": true,
+					"id":          true,
+					"import_only": true,
+					"version_template": [
+						{},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "key7",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_kms_crypto_key",
+		},
+		{
+			"address": "google_privateca_ca_pool.default",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"issuance_policy": [
+						{
+							"allowed_issuance_modes": [],
+							"allowed_key_types":      [],
+							"baseline_values": [
+								{
+									"additional_extensions": [],
+									"aia_ocsp_servers":      null,
+									"ca_options": [
+										{
+											"is_ca":                       false,
+											"max_issuer_path_length":      null,
+											"non_ca":                      null,
+											"zero_max_issuer_path_length": null,
+										},
+									],
+									"key_usage": [
+										{
+											"base_key_usage": [
+												{
+													"cert_sign":          null,
+													"content_commitment": null,
+													"crl_sign":           null,
+													"data_encipherment":  null,
+													"decipher_only":      null,
+													"digital_signature":  true,
+													"encipher_only":      null,
+													"key_agreement":      null,
+													"key_encipherment":   true,
+												},
+											],
+											"extended_key_usage": [
+												{
+													"client_auth":      null,
+													"code_signing":     null,
+													"email_protection": null,
+													"ocsp_signing":     null,
+													"server_auth":      true,
+													"time_stamping":    null,
+												},
+											],
+											"unknown_extended_key_usages": [],
+										},
+									],
+									"policy_ids": [],
+								},
+							],
+							"identity_constraints": [],
+							"maximum_lifetime":     null,
+						},
+					],
+					"labels": {
+						"foo": "bar",
+					},
+					"location": "us-central1",
+					"name":     "my-ca-pool-04",
+					"project":  "modular-scout-345114",
+					"publishing_options": [
+						{
+							"publish_ca_cert": true,
+							"publish_crl":     true,
+						},
+					],
+					"tier":     "ENTERPRISE",
+					"timeouts": null,
+				},
+				"after_sensitive": {
+					"issuance_policy": [
+						{
+							"allowed_issuance_modes": [],
+							"allowed_key_types":      [],
+							"baseline_values": [
+								{
+									"additional_extensions": [],
+									"ca_options": [
+										{},
+									],
+									"key_usage": [
+										{
+											"base_key_usage": [
+												{},
+											],
+											"extended_key_usage": [
+												{},
+											],
+											"unknown_extended_key_usages": [],
+										},
+									],
+									"policy_ids": [],
+								},
+							],
+							"identity_constraints": [],
+						},
+					],
+					"labels": {},
+					"publishing_options": [
+						{},
+					],
+				},
+				"after_unknown": {
+					"id": true,
+					"issuance_policy": [
+						{
+							"allowed_issuance_modes": [],
+							"allowed_key_types":      [],
+							"baseline_values": [
+								{
+									"additional_extensions": [],
+									"ca_options": [
+										{},
+									],
+									"key_usage": [
+										{
+											"base_key_usage": [
+												{},
+											],
+											"extended_key_usage": [
+												{},
+											],
+											"unknown_extended_key_usages": [],
+										},
+									],
+									"policy_ids": [],
+								},
+							],
+							"identity_constraints": [],
+						},
+					],
+					"labels": {},
+					"publishing_options": [
+						{},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "default",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_privateca_ca_pool",
+		},
+		{
+			"address": "google_privateca_certificate.default",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"certificate_authority": "my-authority4",
+					"certificate_template":  null,
+					"config":                [],
+					"labels":                null,
+					"lifetime":              "860s",
+					"location":              "us-central1",
+					"name":                  "my-certificate",
+					"pool":                  "my-ca-pool-04",
+					"project":               "modular-scout-345114",
+					"timeouts":              null,
+				},
+				"after_sensitive": {
+					"certificate_description": [],
+					"config":                  [],
+					"pem_certificate_chain":   [],
+					"pem_certificates":        [],
+					"revocation_details":      [],
+				},
+				"after_unknown": {
+					"certificate_description": true,
+					"config":                  [],
+					"create_time":             true,
+					"id":                      true,
+					"issuer_certificate_authority": true,
+					"pem_certificate":              true,
+					"pem_certificate_chain":        true,
+					"pem_certificates":             true,
+					"pem_csr":                      true,
+					"revocation_details":           true,
+					"update_time":                  true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "default",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_privateca_certificate",
+		},
+		{
+			"address": "google_privateca_certificate_authority.test-ca4",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"certificate_authority_id": "my-authority4",
+					"config": [
+						{
+							"subject_config": [
+								{
+									"subject": [
+										{
+											"common_name":         "my-certificate-authority",
+											"country_code":        "us",
+											"locality":            "mountain view",
+											"organization":        "google",
+											"organizational_unit": "enterprise",
+											"postal_code":         "94109",
+											"province":            "california",
+											"street_address":      "1600 amphitheatre parkway",
+										},
+									],
+									"subject_alt_name": [],
+								},
+							],
+							"x509_config": [
+								{
+									"additional_extensions": [],
+									"aia_ocsp_servers":      null,
+									"ca_options": [
+										{
+											"is_ca":                       true,
+											"max_issuer_path_length":      null,
+											"non_ca":                      null,
+											"zero_max_issuer_path_length": null,
+										},
+									],
+									"key_usage": [
+										{
+											"base_key_usage": [
+												{
+													"cert_sign":          true,
+													"content_commitment": null,
+													"crl_sign":           true,
+													"data_encipherment":  null,
+													"decipher_only":      null,
+													"digital_signature":  null,
+													"encipher_only":      null,
+													"key_agreement":      null,
+													"key_encipherment":   null,
+												},
+											],
+											"extended_key_usage": [
+												{
+													"client_auth":      null,
+													"code_signing":     null,
+													"email_protection": null,
+													"ocsp_signing":     null,
+													"server_auth":      true,
+													"time_stamping":    null,
+												},
+											],
+											"unknown_extended_key_usages": [],
+										},
+									],
+									"policy_ids": [],
+								},
+							],
+						},
+					],
+					"deletion_protection":                    false,
+					"desired_state":                          null,
+					"gcs_bucket":                             null,
+					"ignore_active_certificates_on_deletion": false,
+					"key_spec": [
+						{
+							"algorithm":             null,
+							"cloud_kms_key_version": "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+						},
+					],
+					"labels":   null,
+					"lifetime": "315360000s",
+					"location": "us-central1",
+					"pool":     "my-ca-pool-04",
+					"project":  "modular-scout-345114",
+					"timeouts": null,
+					"type":     "SELF_SIGNED",
+				},
+				"after_sensitive": {
+					"access_urls": [],
+					"config": [
+						{
+							"subject_config": [
+								{
+									"subject": [
+										{},
+									],
+									"subject_alt_name": [],
+								},
+							],
+							"x509_config": [
+								{
+									"additional_extensions": [],
+									"ca_options": [
+										{},
+									],
+									"key_usage": [
+										{
+											"base_key_usage": [
+												{},
+											],
+											"extended_key_usage": [
+												{},
+											],
+											"unknown_extended_key_usages": [],
+										},
+									],
+									"policy_ids": [],
+								},
+							],
+						},
+					],
+					"key_spec": [
+						{},
+					],
+					"pem_ca_certificates": [],
+				},
+				"after_unknown": {
+					"access_urls": true,
+					"config": [
+						{
+							"subject_config": [
+								{
+									"subject": [
+										{},
+									],
+									"subject_alt_name": [],
+								},
+							],
+							"x509_config": [
+								{
+									"additional_extensions": [],
+									"ca_options": [
+										{},
+									],
+									"key_usage": [
+										{
+											"base_key_usage": [
+												{},
+											],
+											"extended_key_usage": [
+												{},
+											],
+											"unknown_extended_key_usages": [],
+										},
+									],
+									"policy_ids": [],
+								},
+							],
+						},
+					],
+					"create_time": true,
+					"id":          true,
+					"key_spec": [
+						{},
+					],
+					"name":                true,
+					"pem_ca_certificates": true,
+					"state":               true,
+					"update_time":         true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "test-ca4",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_privateca_certificate_authority",
+		},
+		{
+			"address": "tls_cert_request.example",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"dns_names":     null,
+					"ip_addresses":  null,
+					"key_algorithm": "RSA",
+					"subject": [
+						{
+							"common_name":         "example.com",
+							"country":             null,
+							"locality":            null,
+							"organization":        "ACME Examples, Inc",
+							"organizational_unit": null,
+							"postal_code":         null,
+							"province":            null,
+							"serial_number":       null,
+							"street_address":      null,
+						},
+					],
+					"uris": null,
+				},
+				"after_sensitive": {
+					"private_key_pem": true,
+					"subject": [
+						{},
+					],
+				},
+				"after_unknown": {
+					"cert_request_pem": true,
+					"id":               true,
+					"private_key_pem":  true,
+					"subject": [
+						{},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "example",
+			"provider_name": "registry.terraform.io/hashicorp/tls",
+			"type":          "tls_cert_request",
+		},
+		{
+			"address": "tls_private_key.example",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"algorithm":   "RSA",
+					"ecdsa_curve": "P224",
+					"rsa_bits":    2048,
+				},
+				"after_sensitive": {
+					"private_key_openssh": true,
+					"private_key_pem":     true,
+				},
+				"after_unknown": {
+					"id": true,
+					"private_key_openssh":           true,
+					"private_key_pem":               true,
+					"public_key_fingerprint_md5":    true,
+					"public_key_fingerprint_sha256": true,
+					"public_key_openssh":            true,
+					"public_key_pem":                true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "example",
+			"provider_name": "registry.terraform.io/hashicorp/tls",
+			"type":          "tls_private_key",
+		},
+	],
+	"terraform_version": "1.2.4",
+}

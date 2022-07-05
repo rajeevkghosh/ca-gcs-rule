@@ -1,0 +1,16 @@
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+import "tfplan-functions" as plan
+import "strings"
+import "types"
+
+# Get all Composer Instances
+allCertAuthorityInstances = plan.find_resources("google_privateca_certificate_authority")
+
+for allCertAuthorityInstances as address, rc {
+    ca_gcs_bucket = plan.evaluate_attribute(rc,"gcs_bucket")
+    print(ca_gcs_bucket)
+    print(types.type_of(ca_gcs_bucket))
+}
+
+main = rule {true}

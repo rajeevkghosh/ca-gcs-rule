@@ -1,0 +1,101 @@
+import "strings"
+import "types"
+
+outputs = {}
+
+_modules = {
+	"root": {
+		"data": {
+			"google_kms_crypto_key": {
+				"cryptokey-4": {
+					0: {
+						"attr": {
+							"destroy_scheduled_duration": "86400s",
+							"id":                            "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4",
+							"import_only":                   false,
+							"key_ring":                      "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+							"labels":                        {},
+							"name":                          "cryptokey-4",
+							"purpose":                       "ENCRYPT_DECRYPT",
+							"rotation_period":               "7776000s",
+							"skip_initial_version_creation": null,
+							"version_template": [
+								{
+									"algorithm":        "GOOGLE_SYMMETRIC_ENCRYPTION",
+									"protection_level": "HSM",
+								},
+							],
+						},
+						"depends_on": [],
+						"id":         "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4",
+						"tainted":    false,
+					},
+				},
+			},
+			"google_kms_crypto_key_version": {
+				"crypto_key_version": {
+					0: {
+						"attr": {
+							"algorithm":        "GOOGLE_SYMMETRIC_ENCRYPTION",
+							"crypto_key":       "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4",
+							"id":               "//cloudkms.googleapis.com/v1/projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+							"name":             "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+							"protection_level": "HSM",
+							"public_key":       null,
+							"state":            "ENABLED",
+							"version":          1,
+						},
+						"depends_on": [],
+						"id":         "//cloudkms.googleapis.com/v1/projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1/cryptoKeys/cryptokey-4/cryptoKeyVersions/1",
+						"tainted":    false,
+					},
+				},
+			},
+			"google_kms_key_ring": {
+				"keyring-1": {
+					0: {
+						"attr": {
+							"id":       "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+							"location": "us-central1",
+							"name":     "keyring-1",
+							"project":  "modular-scout-345114",
+						},
+						"depends_on": [],
+						"id":         "projects/modular-scout-345114/locations/us-central1/keyRings/keyring-1",
+						"tainted":    false,
+					},
+				},
+			},
+		},
+		"path":      [],
+		"resources": {},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.2.4"
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources

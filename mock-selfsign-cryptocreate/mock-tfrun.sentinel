@@ -1,0 +1,37 @@
+id = "run-UDHcts4B4bJtWGPh"
+created_at = "2022-07-04T08:13:41.044Z"
+message = "updated main.tf"
+commit_sha = "92789e7ea77e0d08d66c4ad22e7a9cc0d498b875"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+
+variables = {
+	"GOOGLE_CREDENTIALS": {
+		"category":  "env",
+		"sensitive": true,
+	},
+}
+
+organization = {
+	"name": "Wells-Phase3",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2022-07-04T07:54:59.762Z",
+	"description": null,
+	"id":          "ws-FN4bt3r6rggcC5hp",
+	"name":        "ca-selfsign",
+	"tags":        [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "rajeevkghosh/ca-selfsign",
+		"identifier":         "rajeevkghosh/ca-selfsign",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}
