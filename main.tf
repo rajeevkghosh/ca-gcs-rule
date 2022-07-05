@@ -51,7 +51,7 @@ resource "google_privateca_certificate_authority" "test-ca5" {
   project = "modular-scout-345114"
   pool = google_privateca_ca_pool.default.name
   deletion_protection = false
-  bucket = "my-bucket1"
+  gcs_bucket = google_storage_bucket.default.url
   config {
     subject_config {
       subject {
