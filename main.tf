@@ -98,7 +98,7 @@ resource "google_privateca_certificate" "default" {
   pem_csr = tls_cert_request.example.cert_request_pem
 }
 
-resource "google_storage_bucket" "default" {
+/*resource "google_storage_bucket" "default" {
   name          = "bucket-ca-009"
   location      = "US"
   project = "modular-scout-345114"
@@ -112,7 +112,7 @@ resource "google_storage_bucket" "default" {
       type = "Delete"
     }
   }
-}
+}*/
 data "google_storage_bucket" "default2" {
   name          = "bucket-ca-007"
 }

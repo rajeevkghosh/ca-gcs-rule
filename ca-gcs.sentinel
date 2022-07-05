@@ -1,20 +1,48 @@
 # Import common-functions/tfplan-functions/tfplan-functions.sentinel
 # with alias "plan"
+import "tfstate-functions" as tfstate
+import "tfstate/v2" as tfstate2
 import "tfplan-functions" as plan
 import "strings"
 import "types"
+
+bucket_map_state = []
+# get all storage buckets in tfplan
+allTfstatebuckets = tfstate.find_resources("google_storage_bucket")
+
+for allTfstatebuckets as address, rc {
+    bucket_tfstate = tfstate.evaluate_attribute(rc, "name")
+    append(bucket_map_state,bucket_tfstate)
+}
+print(bucket_map_state)
+
+allTfplanbuckets = plan.find_resources("google_storage_bucket")
+
+for allTfplanbuckets as address, rc {
+    bucket_tfplan = plan.evaluate_attribute(rc, "name")
+    append(bucket_map_state,bucket_tfplan)
+}
+print(bucket_map_state)
+
+# get all storage buckets in tfstate
 
 # Get all Composer Instances
 allCertAuthorityInstances = plan.find_resources("google_privateca_certificate_authority")
 
 messgages_ca_gcs_bucket = {}
 for allCertAuthorityInstances as address, rc {
-    ca_gcs_bucket = plan.evaluate_attribute(rc.change,"gcs_bucket")
+    ca_gcs_bucket = plan.evaluate_attribute(rc,"gcs_bucket")
     print(ca_gcs_bucket)
     //print(types.type_of(ca_gcs_bucket))
     if (types.type_of(ca_gcs_bucket) == "null" or types.type_of(ca_gcs_bucket) == "undefined") {
         print("Please define gcs_bucket name for resource: "+address)
         messgages_ca_gcs_bucket[address] = rc
+    } else {
+        if ca_gcs_bucket not in bucket_map_state {
+            print("The gcs_bucket name  provided for resource: "+address+ "   doesn't exist")
+            messgages_ca_gcs_bucket[address] = rc
+
+        }
     }
 
 }

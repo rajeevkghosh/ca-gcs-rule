@@ -5,6 +5,12 @@
 			"source": "./tfplan-functions.sentinel",
 			"sourceSum": "",
 			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfplan-functions.sentinel"
+		},
+		{
+			"key": "tfstate-functions",
+			"source": "./tfstate-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfstate-functions.sentinel"
 		}
 	]
 }
