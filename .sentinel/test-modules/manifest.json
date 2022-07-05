@@ -1,0 +1,52 @@
+{
+	"records": [
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_pass/tfplan-functions",
+			"source": "../../tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_pass/tfstate-functions",
+			"source": "../../tfstate-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfstate-functions.sentinel"
+		},
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_null/tfplan-functions",
+			"source": "../../tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_invalid_bucket/tfplan-functions",
+			"source": "../../tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_invalid_bucket/tfstate-functions",
+			"source": "../../tfstate-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfstate-functions.sentinel"
+		},
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_null/tfstate-functions",
+			"source": "../../tfstate-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfstate-functions.sentinel"
+		},
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_fail/tfplan-functions",
+			"source": "../../tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test/ca-gcs/gcp_cas_custombucket_fail/tfstate-functions",
+			"source": "../../tfstate-functions.sentinel",
+			"sourceSum": "",
+			"dest": "/home/rajeevghosh/WELLS-PHASE3/ca-gcs-rule/tfstate-functions.sentinel"
+		}
+	]
+}

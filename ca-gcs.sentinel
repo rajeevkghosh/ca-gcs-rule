@@ -47,4 +47,5 @@ for allCertAuthorityInstances as address, rc {
 
 }
 
-main = rule {true}
+GCP_CAS_CUSTOMBUCKET = rule {length(messgages_ca_gcs_bucket) is 0}
+main = rule {GCP_CAS_CUSTOMBUCKET}

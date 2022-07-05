@@ -1,7 +1,7 @@
 mock "tfplan/v2" {
   module {
     //source = "mock-selfsign-cryptocreate/mock-tfplan-v2.sentinel"
-    source = "mock6/mock-tfplan-v2.sentinel"
+    source = "mock5/mock-tfplan-v2.sentinel"
   }
 }
 module "tfplan-functions" {
@@ -14,6 +14,6 @@ module "tfstate-functions" {
 
 mock "tfstate/v2" {
   module {
-    source = "mock6/mock-tfstate-v2.sentinel"
+    source = "mock5/mock-tfstate-v2.sentinel"
   }
 }
