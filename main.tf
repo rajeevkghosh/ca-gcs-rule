@@ -115,6 +115,5 @@ resource "google_storage_bucket" "default" {
 }
 data "google_storage_bucket" "default2" {
   name          = "bucket-ca-007"
-  location      = "US"
 }
 
