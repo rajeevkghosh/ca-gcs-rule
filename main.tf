@@ -98,7 +98,7 @@ resource "google_privateca_certificate" "default" {
 }
 
 resource "google_storage_bucket" "default" {
-  name          = "auto-expiring-bucket"
+  name          = "bucket-ca-007"
   location      = "US"
   project = "modular-scout-345114"
   force_destroy = true
