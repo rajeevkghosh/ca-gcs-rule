@@ -9,13 +9,14 @@ allCertAuthorityInstances = plan.find_resources("google_privateca_certificate_au
 
 messgages_ca_gcs_bucket = {}
 for allCertAuthorityInstances as address, rc {
-    ca_gcs_bucket = plan.evaluate_attribute(rc,"gcs_bucket")
+    ca_gcs_bucket = plan.evaluate_attribute(rc.change,"gcs_bucket")
     print(ca_gcs_bucket)
     //print(types.type_of(ca_gcs_bucket))
-    if ca_gcs_bucket == null {
+    if (types.type_of(ca_gcs_bucket) == "null" or types.type_of(ca_gcs_bucket) == "undefined") {
         print("Please define gcs_bucket name for resource: "+address)
+        messgages_ca_gcs_bucket[address] = rc
     }
-    
+
 }
 
 main = rule {true}
